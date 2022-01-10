@@ -13,32 +13,32 @@ RSpec.describe Product, type: :model do
       )
     end
 
-    it 'should save to the database' do
+    it 'saves to the database' do
       expect(@product.save).to be_truthy
     end
 
-    it 'should validate that name is present' do
+    it 'validates that name is present' do
       @product.name = nil
       expect(@product.save).to_not be_truthy
       error = @product.errors.full_messages
       expect(error).to include("Name can't be blank")
     end
 
-    it 'should validate that price is present' do
+    it 'validates that price is present' do
       @product.price = ''
       expect(@product.save).to_not be_truthy
       error = @product.errors.full_messages
       expect(error).to include('Price is not a number')
     end
 
-    it 'should validate that quantity is present' do
+    it 'validates that quantity is present' do
       @product.quantity = nil
       expect(@product.save).to_not be_truthy
       error = @product.errors.full_messages
       expect(error).to include("Quantity can't be blank")
     end
 
-    it 'should validate that category is present' do
+    it 'validates that category is present' do
       @product.category = nil
       expect(@product.save).to_not be_truthy
       error = @product.errors.full_messages
