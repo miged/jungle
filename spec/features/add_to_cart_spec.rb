@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'support/image'
 
-RSpec.feature "AddToCard", type: :feature, js: true do
+RSpec.feature "AddToCart", type: :feature, js: true do
   # SETUP
   before :each do
     Product.destroy_all
